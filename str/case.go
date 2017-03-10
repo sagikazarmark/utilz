@@ -1,6 +1,7 @@
 package str
 
 import (
+	"bytes"
 	"unicode"
 	"unicode/utf8"
 )
@@ -13,7 +14,7 @@ func ToSnake(str string) string {
 	}
 
 	// Build the results in this buffer
-	buf := ""
+	buf := new(bytes.Buffer)
 
 	// Trick: if the first character is uppercase, do not prepend an underscore
 	prev := '_'
@@ -27,21 +28,21 @@ func ToSnake(str string) string {
 			// Prepend an underscore if the previous char is not an underscore
 			// and the current char is not part of an abbreviation
 			if prev != '_' && !unicode.IsUpper(prev) {
-				buf += "_"
+				buf.WriteRune('_')
 			}
 
-			buf += string(unicode.ToLower(r))
+			buf.WriteRune(unicode.ToLower(r))
 
 		default:
 			if r == '-' || r == ' ' {
 				r = '_'
 			}
 
-			buf += string(r)
+			buf.WriteRune(r)
 		}
 
 		prev = r
 	}
 
-	return buf
+	return buf.String()
 }
