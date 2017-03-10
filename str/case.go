@@ -1,6 +1,9 @@
 package str
 
-import "unicode"
+import (
+	"unicode"
+	"unicode/utf8"
+)
 
 // ToSnake converts a string (camel or spinal) to snake case
 func ToSnake(str string) string {
@@ -15,26 +18,29 @@ func ToSnake(str string) string {
 	// Trick: if the first character is uppercase, do not prepend an underscore
 	prev := '_'
 
-	for _, c := range str {
+	for len(str) > 0 {
+		r, size := utf8.DecodeRuneInString(str)
+		str = str[size:]
+
 		switch {
-		case unicode.IsUpper(c):
+		case unicode.IsUpper(r):
 			// Prepend an underscore if the previous char is not an underscore
 			// and the current char is not part of an abbreviation
 			if prev != '_' && !unicode.IsUpper(prev) {
 				buf += "_"
 			}
 
-			buf += string(unicode.ToLower(c))
+			buf += string(unicode.ToLower(r))
 
 		default:
-			if c == '-' || c == ' ' {
-				c = '_'
+			if r == '-' || r == ' ' {
+				r = '_'
 			}
 
-			buf += string(c)
+			buf += string(r)
 		}
 
-		prev = c
+		prev = r
 	}
 
 	return buf
