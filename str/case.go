@@ -18,7 +18,7 @@ func ToSnake(str string) string {
 	for _, c := range str {
 		switch {
 		case unicode.IsUpper(c):
-			// Prepend an underscore if the previos char is not an underscore
+			// Prepend an underscore if the previous char is not an underscore
 			// and the current char is not part of an abbreviation
 			if prev != '_' && !unicode.IsUpper(prev) {
 				buf += "_"
