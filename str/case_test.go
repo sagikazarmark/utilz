@@ -12,6 +12,7 @@ func TestToSnake(t *testing.T) {
 		"fooBar":  "foo_bar",
 		"Foo-Bar": "foo_bar",
 		"Foo Bar": "foo_bar",
+		"FOOBar":  "foo_bar",
 	}
 
 	for in, want := range data {
