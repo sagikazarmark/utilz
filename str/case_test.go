@@ -8,11 +8,15 @@ import (
 
 func TestToSnake(t *testing.T) {
 	data := map[string]string{
-		"FooBar":  "foo_bar",
-		"fooBar":  "foo_bar",
-		"Foo-Bar": "foo_bar",
-		"Foo Bar": "foo_bar",
-		"FOOBar":  "foo_bar",
+		"foo":       "foo",
+		"FooBar":    "foo_bar",
+		"fooBar":    "foo_bar",
+		"Foo-Bar":   "foo_bar",
+		"Foo Bar":   "foo_bar",
+		"FOOBar":    "foo_bar",
+		"FOOBarBaz": "foo_bar_baz",
+		"FOOBarBAZ": "foo_bar_baz",
+		"Foo_-Bar":  "foo__bar",
 	}
 
 	for in, want := range data {
