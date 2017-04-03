@@ -1,9 +1,9 @@
-package str_test
+package strings_test
 
 import (
 	"testing"
 
-	"github.com/sagikazarmark/utilz/str"
+	"github.com/sagikazarmark/utilz/strings"
 )
 
 func TestToSnake(t *testing.T) {
@@ -20,9 +20,7 @@ func TestToSnake(t *testing.T) {
 	}
 
 	for in, want := range data {
-		got := str.ToSnake(in)
-
-		if got != want {
+		if got := strings.ToSnake(in); got != want {
 			t.Errorf("converting '%s' to snake case failed, expected: %s, actual: %s", in, want, got)
 		}
 	}

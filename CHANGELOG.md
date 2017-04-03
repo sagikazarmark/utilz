@@ -1,5 +1,11 @@
 # Change Log
 
+## Unreleased
+
+### Changed
+
+- Matched `str` package with `strings` in the stdlib
+
 
 ## 0.0.1 - 2017-03-11
 

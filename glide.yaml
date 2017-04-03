@@ -1,4 +1,2 @@
 package: github.com/sagikazarmark/utilz
 import:
-- package: github.com/sagikazarmark/utilz
-  version: ~0.0.1
