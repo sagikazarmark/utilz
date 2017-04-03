@@ -6,7 +6,7 @@ import (
 	"unicode/utf8"
 )
 
-// ToSnake converts a string (camel or spinal) to snake case
+// ToSnake converts a string (camel or spinal) to snake case.
 func ToSnake(s string) string {
 	// Skip processing for an empty string
 	if len(s) == 0 {
