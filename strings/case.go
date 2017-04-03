@@ -7,9 +7,9 @@ import (
 )
 
 // ToSnake converts a string (camel or spinal) to snake case
-func ToSnake(str string) string {
+func ToSnake(s string) string {
 	// Skip processing for an empty string
-	if len(str) == 0 {
+	if len(s) == 0 {
 		return ""
 	}
 
@@ -19,16 +19,16 @@ func ToSnake(str string) string {
 	// Trick: if the first rune is uppercase, do not prepend an underscore
 	prev := '_'
 
-	for len(str) > 0 {
-		r, size := utf8.DecodeRuneInString(str)
-		str = str[size:]
+	for len(s) > 0 {
+		r, size := utf8.DecodeRuneInString(s)
+		s = s[size:]
 
 		switch {
 		case unicode.IsUpper(r):
 			var uc bool
 
-			if len(str) > 0 {
-				next, _ := utf8.DecodeRuneInString(str)
+			if len(s) > 0 {
+				next, _ := utf8.DecodeRuneInString(s)
 				uc = prev != '_' && (!unicode.IsUpper(prev) || (unicode.IsUpper(prev) && !unicode.IsUpper(next)))
 			} else {
 				uc = prev != '_' && !unicode.IsUpper(prev)
