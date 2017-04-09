@@ -4,11 +4,14 @@ import (
 	stdtar "archive/tar"
 	"bytes"
 	"compress/gzip"
+	"fmt"
 	"io"
 	"testing"
 	"time"
 
 	"io/ioutil"
+
+	"os"
 
 	"github.com/sagikazarmark/utilz/archive/tar"
 )
@@ -82,4 +85,13 @@ func TestTarGzFileReader_NotFound(t *testing.T) {
 	if err != tar.ErrFileNotFound {
 		t.Errorf("expected ErrFileNotFound, received: %v", err)
 	}
+}
+
+func ExampleNewTarGzFileReader() {
+	tgz, _ := os.Open("testdata/test.tar.gz")
+
+	reader, _ := tar.NewTarGzFileReader(tgz, "test.txt")
+	contents, _ := ioutil.ReadAll(reader)
+	fmt.Println(string(contents))
+	// Output: test
 }
