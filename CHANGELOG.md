@@ -6,7 +6,7 @@
 ### Added
 
 - **archive/tar:** A Reader which reads a certain file from a TAR archive, optionally decompressing it
-- **arcive/tar:** `NewTarGzFileReader` (returns a Reader which decompresses and unarchives a .tar.gz stream and returns a file from it)
+- **archive/tar:** `NewTarGzFileReader` (returns a Reader which decompresses and unarchives a .tar.gz stream and returns a file from it)
 
 
 ## 0.0.2 - 2017-04-03
