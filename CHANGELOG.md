@@ -29,4 +29,4 @@
 
 ### Added
 
-- **strings:** `ToSnake` util to convert a string to *snake-case*
+- **strings:** `ToSnake` util to convert a string to *snake_case*
