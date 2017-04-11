@@ -47,3 +47,24 @@ func TestToSpinal(t *testing.T) {
 		}
 	}
 }
+
+func TestToTrain(t *testing.T) {
+	data := map[string]string{
+		"foo":       "Foo",
+		"FooBar":    "Foo-Bar",
+		"fooBar":    "Foo-Bar",
+		"Foo_Bar":   "Foo-Bar",
+		"Foo-Bar":   "Foo-Bar",
+		"Foo Bar":   "Foo-Bar",
+		"FOOBar":    "Foo-Bar",
+		"FOOBarBaz": "Foo-Bar-Baz",
+		"FOOBarBAZ": "Foo-Bar-Baz",
+		"Foo_-Bar":  "Foo--Bar",
+	}
+
+	for in, want := range data {
+		if got := strings.ToTrain(in); got != want {
+			t.Errorf("converting '%s' to train case failed, expected: %s, actual: %s", in, want, got)
+		}
+	}
+}

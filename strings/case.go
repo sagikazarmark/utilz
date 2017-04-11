@@ -6,18 +6,27 @@ import (
 	"unicode/utf8"
 )
 
-// ToSnake converts a string (camel or spinal) to snake case.
+// ToSnake converts a string (camel or spinal) to snake_case.
 func ToSnake(s string) string {
-	return toSeparated(s, '_')
+	return toSeparated(s, '_', false)
 }
 
-// ToSpinal converts a string (camel or snake) to spinal case.
+// ToSpinal converts a string (camel or snake) to spinal-case.
+//
+// See https://en.wikipedia.org/wiki/Letter_case#Special_case_styles
 func ToSpinal(s string) string {
-	return toSeparated(s, '-')
+	return toSeparated(s, '-', false)
+}
+
+// ToTrain converts a string (camel, snake or spinal) to Train-Case.
+//
+// See https://en.wikipedia.org/wiki/Letter_case#Special_case_styles
+func ToTrain(s string) string {
+	return toSeparated(s, '-', true)
 }
 
 // toSeparated converts a string (camel, snake or spinal) to a lower-cased separated one (essentially snake or spinal based on the separator).
-func toSeparated(s string, sep rune) string {
+func toSeparated(s string, sep rune, t bool) string {
 	// Skip processing for an empty string
 	if len(s) == 0 {
 		return ""
@@ -50,11 +59,21 @@ func toSeparated(s string, sep rune) string {
 				buf.WriteRune(sep)
 			}
 
-			buf.WriteRune(unicode.ToLower(r))
+			// If train case is enabled and the previous rune us a separator, make it upper case
+			if t && (writeSep || prev == sep) {
+				buf.WriteRune(r)
+			} else {
+				buf.WriteRune(unicode.ToLower(r))
+			}
 
 		default:
 			if r == '_' || r == '-' || r == ' ' {
 				r = sep
+			}
+
+			// If train case is enabled and the previous rune us a separator, make it upper case
+			if t && prev == sep {
+				r = unicode.ToUpper(r)
 			}
 
 			buf.WriteRune(r)

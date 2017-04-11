@@ -5,7 +5,8 @@
 
 ### Added
 
-- **strings:** `ToSpinal` util to convert a string to spinal case
+- **strings:** `ToSpinal` util to convert a string to *spinal-case*
+- **strings:** `ToTrain` util to convert a string to *Train-Case*
 
 
 ## 0.0.3 - 2017-04-09
@@ -27,4 +28,4 @@
 
 ### Added
 
-- **strings:** `ToSnake` util to convert a string to snake case
+- **strings:** `ToSnake` util to convert a string to *snake-case*
