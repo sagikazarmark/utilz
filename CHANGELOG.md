@@ -7,6 +7,7 @@
 
 - **strings:** `ToSpinal` util to convert a string to *spinal-case*
 - **strings:** `ToTrain` util to convert a string to *Train-Case*
+- **strings:** `ToCamel` util to convert a string to *CamelCase*
 
 
 ## 0.0.3 - 2017-04-09
