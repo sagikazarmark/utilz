@@ -1,6 +1,13 @@
 # Change Log
 
 
+## Unreleased
+
+### Added
+
+- `Must` func to panic when error is passed
+
+
 ## 0.0.4 - 2017-04-11
 
 ### Added
