@@ -6,6 +6,7 @@
 ### Added
 
 - `Must` func to panic when error is passed
+- **time:** `Clock` interface and implementations to make testing with time easy
 
 
 ## 0.0.4 - 2017-04-11
