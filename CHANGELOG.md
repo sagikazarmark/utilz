@@ -8,6 +8,7 @@
 - **errors:** `Recover` function to create an error from a recovered panic
 - **errors:** `Handler` interface to handle errors
 - **errors:** `LogHandler` implementation (tested with [sirupsen/logrus](https://github.com/sirupsen/logrus))
+- **errors:** `TestHandler` implementation for testing purposes
 
 
 ## 0.0.5 - 2017-05-10
