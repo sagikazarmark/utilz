@@ -6,6 +6,7 @@
 ### Added
 
 - **errors:** `Recover` function to create an error from a recovered panic
+- **errors:** `Handler` interface to handle errors
 
 
 ## 0.0.5 - 2017-05-10
