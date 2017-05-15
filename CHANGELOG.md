@@ -1,6 +1,13 @@
 # Change Log
 
 
+## Unreleased
+
+### Added
+
+- **errors:** `Recover` function to create an error from a recovered panic
+
+
 ## 0.0.5 - 2017-05-10
 
 ### Added
