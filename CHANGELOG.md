@@ -10,6 +10,7 @@
 - **errors:** `LogHandler` implementation (tested with [sirupsen/logrus](https://github.com/sirupsen/logrus))
 - **errors:** `TestHandler` implementation for testing purposes
 - **errors:** `NullHandler` implementation as a fallback
+- **util:** `ShutdownManager` to register and execute shutdown handlers when an application exits
 
 
 ## 0.0.5 - 2017-05-10
