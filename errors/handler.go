@@ -8,6 +8,18 @@ type Handler interface {
 	Handle(err error)
 }
 
+// NullHandler throws every error away.
+type NullHandler struct{}
+
+// NewNullHandler returns a new NullHandler.
+func NewNullHandler() Handler {
+	return &NullHandler{}
+}
+
+// Handle does the actual throwing away.
+func (h *NullHandler) Handle(err error) {
+}
+
 // LogHandler accepts an errorLogger instance and logs an error.
 //
 // Compatible with most level-based loggers.

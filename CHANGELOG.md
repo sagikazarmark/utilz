@@ -9,6 +9,7 @@
 - **errors:** `Handler` interface to handle errors
 - **errors:** `LogHandler` implementation (tested with [sirupsen/logrus](https://github.com/sirupsen/logrus))
 - **errors:** `TestHandler` implementation for testing purposes
+- **errors:** `NullHandler` implementation as a fallback
 
 
 ## 0.0.5 - 2017-05-10
