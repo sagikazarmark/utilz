@@ -1,6 +1,14 @@
 # Change Log
 
 
+## Unreleased
+
+### Added
+
+- **net:** `NewVirtualAddress` to create virtual `net.Addr` instances
+- **net:** Pipe Listener-Dialer pair for testing client-server applications (eg. gRPC)
+
+
 ## 0.1.0 - 2017-05-16
 
 ### Added
