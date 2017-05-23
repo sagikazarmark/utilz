@@ -1,6 +1,13 @@
 # Change Log
 
 
+## Unreleased
+
+### Added
+
+- **net:** `NewVirtualAddress` to create virtual `net.Addr` instances
+
+
 ## 0.1.0 - 2017-05-16
 
 ### Added
