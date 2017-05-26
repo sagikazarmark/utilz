@@ -1,6 +1,13 @@
 # Change Log
 
 
+## Unreleased
+
+### Added
+
+- **time:** `MySQLDateTime` format string
+
+
 ## 0.2.0 - 2017-05-23
 
 ### Added
