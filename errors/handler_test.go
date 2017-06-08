@@ -5,8 +5,8 @@ import (
 
 	"fmt"
 
-	logrus "github.com/Sirupsen/logrus/hooks/test"
 	"github.com/sagikazarmark/utilz/errors"
+	logrus "github.com/sirupsen/logrus/hooks/test"
 )
 
 func TestLogHandler_Handle_Logrus(t *testing.T) {
