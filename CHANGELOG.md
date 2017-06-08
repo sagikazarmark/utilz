@@ -1,6 +1,13 @@
 # Change Log
 
 
+## Unreleased
+
+### Added
+
+- **log:** Logger interfaces
+
+
 ## 0.2.1 - 2017-05-26
 
 ### Added
