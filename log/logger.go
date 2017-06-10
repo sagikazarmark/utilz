@@ -26,8 +26,14 @@ type StdLogger interface {
 	Println(args ...interface{})
 }
 
-// Logger combines all goods of logging.
-type Logger interface {
+// StructuredLevelLogger combines structured and level-based logging.
+type StructuredLevelLogger interface {
 	StructuredLogger
 	LevelLogger
+}
+
+// Logger combines all goods of logging.
+type Logger interface {
+	StructuredLevelLogger
+	StdLogger
 }
