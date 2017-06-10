@@ -1,3 +1,8 @@
+# Deprecated
+
+Moved to https://github.com/goph/stdlib
+
+
 # Utilz
 
 [![Build Status](https://img.shields.io/travis/sagikazarmark/utilz.svg?style=flat-square)](https://travis-ci.org/sagikazarmark/utilz)
